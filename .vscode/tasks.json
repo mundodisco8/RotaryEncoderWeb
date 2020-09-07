@@ -1,0 +1,40 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Server Dev Mode",
+            "type": "shell",
+            "command": "${workspaceFolder}/Scripts/activate.bat",
+            "args": [
+                "&",
+                "py",
+                "-m",
+                "bokeh",
+                "serve",
+                "src/PulseGraph.py",
+                "--dev"
+            ],
+            "problemMatcher": [
+                "$eslint-stylish"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "Run Pylint",
+            "type": "shell",
+            "command": "py",
+            "args": [
+                "-m",
+                "pylint",
+                "src/PulseGraph.py"
+            ],
+            "problemMatcher": [
+                "$eslint-stylish"
+            ]
+        }
+    ]
+}
